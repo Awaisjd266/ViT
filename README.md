@@ -294,3 +294,7 @@ Unit-test geometric fixtures are explicitly synthetic and exist only inside temp
 - [PyTorch](https://pytorch.org/) and [torchvision](https://docs.pytorch.org/vision/0.21/).
 
 The manuscript acknowledges grant52432010; that acknowledgment belongs to the manuscript and is not a claim that the grant funded or endorsed this independent software implementation. See [third-party notices](THIRD_PARTY_NOTICES.md) for dataset and manuscript exclusions from the MIT software license.
+
+## Existing calculator
+
+The repository also retains its existing [browser calculator](index.html). Its original [setup and keyboard instructions](docs/calculator_README.md) are preserved separately.

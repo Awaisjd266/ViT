@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111827">
+  <meta name="description" content="A responsive calculator for everyday arithmetic.">
+  <title>Calculator</title>
+  <style>
+    :root { color-scheme: dark; font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif; }
+    * { box-sizing: border-box; }
+    body {
+      min-height: 100vh; margin: 0; padding: 24px; display: grid; place-items: center;
+      color: #f8fafc; background: radial-gradient(circle at 15% 10%, #29336b 0, transparent 35%),
+      radial-gradient(circle at 90% 90%, #124c53 0, transparent 32%), #0b1020;
+    }
+    .calculator { width: min(100%, 390px); padding: 22px; border: 1px solid #ffffff1c;
+      border-radius: 28px; background: #151d32ed; box-shadow: 0 28px 80px #0008; }
+    .top { display:flex; justify-content:space-between; align-items:center; margin: 0 3px 12px;
+      color:#aab5d1; font-size:.78rem; letter-spacing:.14em; text-transform:uppercase; }
+    .dot { width:8px; height:8px; border-radius:50%; background:#63d6b1; box-shadow:0 0 12px #63d6b1; }
+    .screen { min-height:145px; display:flex; flex-direction:column; justify-content:flex-end;
+      align-items:flex-end; padding:18px 7px 23px; overflow:hidden; }
+    #expression { min-height:25px; width:100%; text-align:right; color:#8996b7; overflow-wrap:anywhere; }
+    #display { width:100%; margin-top:8px; text-align:right; font-size:clamp(2.4rem, 10vw, 3.4rem);
+      font-weight:600; line-height:1.12; letter-spacing:-.045em; overflow-wrap:anywhere; }
+    #display.error { color:#ff8792; font-size:1.8rem; }
+    .keys { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; }
+    button { height:67px; border:1px solid transparent; border-radius:18px; background:#25304d;
+      color:#f8fafc; font:inherit; font-size:1.25rem; font-weight:600; cursor:pointer;
+      transition:transform .12s, background .12s, border-color .12s; }
+    button:hover { background:#344160; border-color:#ffffff20; }
+    button:active { transform:scale(.96); }
+    button:focus-visible { outline:3px solid #9b96ff; outline-offset:3px; }
+    .utility { background:#303b59; color:#c6cee4; }
+    .operator { background:#34345f; color:#c2bfff; font-size:1.45rem; }
+    .equals { color:white; background:linear-gradient(135deg,#8177fa,#5b57d6);
+      box-shadow:0 8px 20px #6e66ed40; }
+    .equals:hover { background:linear-gradient(135deg,#958cff,#6c67ed); }
+    .zero { grid-column:span 2; }
+    .hint { margin:17px 3px 0; color:#8490ad; text-align:center; font-size:.72rem; line-height:1.5; }
+    @media(max-width:420px) { body{padding:12px} .calculator{padding:17px} button{height:63px} .keys{gap:8px} }
+    @media(prefers-reduced-motion:reduce) { *{transition:none!important} }
+  </style>
+</head>
+<body>
+  <main class="calculator" aria-label="Calculator">
+    <div class="top"><span>Calculator</span><span class="dot" aria-hidden="true"></span></div>
+    <section class="screen" aria-live="polite" aria-atomic="true">
+      <div id="expression">&nbsp;</div>
+      <output id="display" aria-label="Display">0</output>
+    </section>
+    <section class="keys" aria-label="Calculator keypad">
+      <button class="utility" data-action="clear" aria-label="All clear">AC</button>
+      <button class="utility" data-action="delete" aria-label="Delete">DEL</button>
+      <button class="utility" data-value="%" aria-label="Percent">%</button>
+      <button class="operator" data-value="/" aria-label="Divide">÷</button>
+      <button data-value="7">7</button><button data-value="8">8</button><button data-value="9">9</button>
+      <button class="operator" data-value="*" aria-label="Multiply">×</button>
+      <button data-value="4">4</button><button data-value="5">5</button><button data-value="6">6</button>
+      <button class="operator" data-value="-" aria-label="Subtract">−</button>
+      <button data-value="1">1</button><button data-value="2">2</button><button data-value="3">3</button>
+      <button class="operator" data-value="+" aria-label="Add">+</button>
+      <button class="utility" data-action="sign" aria-label="Change sign">+/−</button>
+      <button class="zero" data-value="0">0</button><button data-value=".">.</button>
+      <button class="equals" data-action="equals" aria-label="Calculate">=</button>
+    </section>
+    <p class="hint">Keyboard supported · Enter to calculate · Esc to clear</p>
+  </main>
+  <script>
+    (() => {
+      const display = document.getElementById("display");
+      const expressionView = document.getElementById("expression");
+      const keys = document.querySelector(".keys");
+      let expression = "";
+      let evaluated = false;
+
+      const pretty = s => s.replace(/\*/g, "×").replace(/\//g, "÷").replace(/-/g, "−");
+      const show = message => {
+        display.classList.toggle("error", Boolean(message));
+        display.textContent = message || (expression || "0");
+        expressionView.textContent = expression ? pretty(expression) : "\u00a0";
+      };
+      const format = n => {
+        if (!Number.isFinite(n)) throw Error("Math error");
+        return String(Number.parseFloat((Object.is(n, -0) ? 0 : n).toPrecision(12)));
+      };
+
+      // Recursive-descent parser: evaluates arithmetic without eval() or Function().
+      function calculate(source) {
+        const tokens = source.match(/\d*\.?\d+|[()+\-*/%]/g) || [];
+        if (tokens.join("") !== source.replace(/\s/g, "") || !tokens.length) throw Error("Invalid expression");
+        let i = 0;
+        const peek = () => tokens[i];
+        const take = () => tokens[i++];
+
+        function primary() {
+          let value;
+          if (peek() === "(") {
+            take(); value = addSub();
+            if (take() !== ")") throw Error("Missing bracket");
+          } else {
+            const token = take();
+            if (token === undefined || !/^\d*\.?\d+$/.test(token)) throw Error("Invalid number");
+            value = Number(token);
+          }
+          while (peek() === "%") { take(); value /= 100; }
+          return value;
+        }
+        function unary() {
+          if (peek() === "+") { take(); return unary(); }
+          if (peek() === "-") { take(); return -unary(); }
+          return primary();
+        }
+        function mulDiv() {
+          let value = unary();
+          while (peek() === "*" || peek() === "/") {
+            const op = take(), rhs = unary();
+            if (op === "/" && rhs === 0) throw Error("Cannot divide by zero");
+            value = op === "*" ? value * rhs : value / rhs;
+          }
+          return value;
+        }
+        function addSub() {
+          let value = mulDiv();
+          while (peek() === "+" || peek() === "-") {
+            const op = take(), rhs = mulDiv();
+            value = op === "+" ? value + rhs : value - rhs;
+          }
+          return value;
+        }
+        const result = addSub();
+        if (i !== tokens.length) throw Error("Invalid expression");
+        return result;
+      }
+
+      function append(value) {
+        if (evaluated && /[0-9.(]/.test(value)) expression = "";
+        evaluated = false;
+        if (/[+*/-]/.test(value) && !expression && value !== "-") return;
+        if (value === ".") {
+          const last = expression.split(/[+*/()%\-]/).pop();
+          if (last.includes(".")) return;
+          if (!last) value = "0.";
+        }
+        if (/[+*/-]/.test(value) && /[+*/-]$/.test(expression))
+          expression = expression.slice(0, -1) + value;
+        else expression += value;
+        show();
+      }
+      function clear() { expression = ""; evaluated = false; show(); }
+      function remove() { expression = expression.slice(0, -1); evaluated = false; show(); }
+      function sign() {
+        if (!expression) { expression = "-"; show(); return; }
+        const m = expression.match(/(\d*\.?\d+%?)$/);
+        if (!m) return;
+        const start = m.index, before = expression.slice(0, start), number = m[0];
+        if (before.endsWith("-") && (before.length === 1 || /[+*/(]$/.test(before.slice(0,-1))))
+          expression = before.slice(0,-1) + number;
+        else expression = before + "(-" + number + ")";
+        evaluated = false; show();
+      }
+      function equals() {
+        if (!expression) return;
+        try {
+          const original = expression, result = format(calculate(expression));
+          expression = result; evaluated = true;
+          display.classList.remove("error"); display.textContent = result;
+          expressionView.textContent = pretty(original) + " =";
+        } catch (e) {
+          display.classList.add("error");
+          display.textContent = e.message === "Cannot divide by zero" ? e.message : "Error";
+          evaluated = false;
+        }
+      }
+
+      keys.addEventListener("click", event => {
+        const b = event.target.closest("button");
+        if (!b) return;
+        if (b.dataset.action === "clear") clear();
+        else if (b.dataset.action === "delete") remove();
+        else if (b.dataset.action === "sign") sign();
+        else if (b.dataset.action === "equals") equals();
+        else if (b.dataset.value !== undefined) append(b.dataset.value);
+      });
+      document.addEventListener("keydown", event => {
+        if (/^[0-9.+\-*/%()]$/.test(event.key)) { event.preventDefault(); append(event.key); }
+        else if (event.key === "Enter" || event.key === "=") { event.preventDefault(); equals(); }
+        else if (event.key === "Backspace") { event.preventDefault(); remove(); }
+        else if (event.key === "Escape") clear();
+      });
+      show();
+    })();
+  </script>
+</body>
+</html>
