@@ -1,6 +1,6 @@
 {
   "date": "2026-11-20",
-  "status": "local implementation verified; full benchmark and remote deployment incomplete",
+  "status": "implementation verified and uploaded; full benchmark incomplete",
   "manuscript_sha256": "99eccf2a6e8a70f92da8540d8d4d088d6a30d67baea64b2db868371b15cb4fee",
   "environment": {
     "python": "3.12.0 (tags/v3.12.0:0fb18b0, Oct  2 2023, 13:03:39) [MSC v.1935 64 bit (AMD64)]",
@@ -11,7 +11,7 @@
     "torch_threads": 6,
     "cuda_available": false,
     "cuda_version": null,
-    "git_commit": null,
+    "git_commit": "016d4d839e836feda5ed2d8c88ea4d2e9598778b",
     "gpu": null
   },
   "tests": {
@@ -218,8 +218,9 @@
   "tuning_trials_executed": 2,
   "full_manuscript_reproduction_completed": false,
   "raw_dataset_publication_completed": false,
+  "remote_code_upload_completed": true,
+  "verified_upload_commit": "016d4d839e836feda5ed2d8c88ea4d2e9598778b",
   "outstanding": [
-    "GitHub account with repository write access is required for deployment",
     "Crack500 original training images missing from inspected official archive",
     "Full-resolution, full-training-set, multi-seed benchmark experiments remain unexecuted",
     "Raw dataset redistribution rights require confirmation",

@@ -39,15 +39,23 @@ def summarize():
     selection_path = Path("runs/pinned-tuning-smoke/selection.json")
     tuning = json.loads(selection_path.read_text()) if selection_path.exists() else None
     write_json(reports / "executed/tuning_results.json", tuning)
-    result = {"date": "2026-11-20", "status": "local implementation verified; full benchmark and remote deployment incomplete",
+    deployment_path = reports / "deployment.json"
+    deployment = json.loads(deployment_path.read_text()) if deployment_path.exists() else {}
+    uploaded = bool(deployment.get("remote_upload_completed", False))
+    status = ("implementation verified and uploaded; full benchmark incomplete" if uploaded else
+              "local implementation verified; full benchmark and remote deployment incomplete")
+    result = {"date": "2026-11-20", "status": status,
               "manuscript_sha256": "99eccf2a6e8a70f92da8540d8d4d088d6a30d67baea64b2db868371b15cb4fee",
               "environment": environment(), "tests": testing, "data_audits": audits,
               "executed_smoke_results": results, "ablation_experiments_executed": len(ablations),
               "tuning_trials_executed": len(tuning["trials"]) if tuning else 0,
               "full_manuscript_reproduction_completed": False,
               "raw_dataset_publication_completed": False,
-              "outstanding": ["GitHub account with repository write access is required for deployment",
-                              "Crack500 original training images missing from inspected official archive",
+              "remote_code_upload_completed": uploaded,
+              "verified_upload_commit": deployment.get("remote_commit"),
+              "outstanding": (["GitHub account with repository write access is required for deployment"]
+                              if not uploaded else []) +
+                             ["Crack500 original training images missing from inspected official archive",
                               "Full-resolution, full-training-set, multi-seed benchmark experiments remain unexecuted",
                               "Raw dataset redistribution rights require confirmation",
                               "Inferred scene overlaps in official splits need further scientific assessment"]}

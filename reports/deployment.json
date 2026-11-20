@@ -1,19 +1,21 @@
 {
   "repository": "https://github.com/Awaisjd266/ViT",
   "initial_remote_state": "empty repository with no branches",
-  "connected_account_last_verified": "mawaisashraf3",
-  "repository_push_permission_last_verified": false,
+  "connected_account_last_verified": "Awaisjd266",
+  "repository_push_permission_last_verified": true,
   "local_repository_initialized": true,
-  "remote_upload_completed": false,
-  "remote_commit": null,
-  "required_action": "Connect Awaisjd266 or grant the connected account write access; verify before publishing",
+  "remote_upload_completed": true,
+  "remote_commit": "016d4d839e836feda5ed2d8c88ea4d2e9598778b",
+  "required_action": null,
   "raw_dataset_upload_completed": false,
   "raw_dataset_note": "Upstream redistribution rights have not been established; raw archives and images excluded from Git",
-  "remote_main_last_inspected": "3bb433df1f2a91b2371f2d90be1a3296b9bcddd2",
+  "remote_main_last_inspected": "016d4d839e836feda5ed2d8c88ea4d2e9598778b",
   "remote_existing_files_preserved": [
     "index.html",
     "docs/calculator_README.md"
   ],
   "related_issue": "https://github.com/Awaisjd266/ViT/issues/2",
-  "local_merge_prepared": true
+  "local_merge_prepared": true,
+  "authentication_method": "Git Credential Manager device authorization completed by user",
+  "upload_verified_by": "Git push success and independent GitHub refs/heads/main API read"
 }
