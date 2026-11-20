@@ -1,0 +1,2 @@
+dataset,model,seed,origin,train_images,val_images,test_images,epochs,f1,miou,accuracy,parameters,fps_cpu_model_only
+crack500-patches,vit,42,executed_smoke_not_benchmark_reproduction,24,12,1124,3,0.446430707440852,0.5925682914682381,0.9018251321776765,96225,183.11362789362184

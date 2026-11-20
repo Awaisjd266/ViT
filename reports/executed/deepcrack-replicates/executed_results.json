@@ -1,0 +1,32 @@
+[
+  {
+    "dataset": "deepcrack",
+    "model": "vit",
+    "seed": 43,
+    "origin": "executed_smoke_not_benchmark_reproduction",
+    "train_images": 24,
+    "val_images": 12,
+    "test_images": 237,
+    "epochs": 3,
+    "f1": 0.003761388869133695,
+    "miou": 0.4792951031371767,
+    "accuracy": 0.9567095063071378,
+    "parameters": 96225,
+    "fps_cpu_model_only": 188.23848361829414
+  },
+  {
+    "dataset": "deepcrack",
+    "model": "vit",
+    "seed": 44,
+    "origin": "executed_smoke_not_benchmark_reproduction",
+    "train_images": 24,
+    "val_images": 12,
+    "test_images": 237,
+    "epochs": 3,
+    "f1": 0.353088618187659,
+    "miou": 0.5494213055451135,
+    "accuracy": 0.8879806582937764,
+    "parameters": 96225,
+    "fps_cpu_model_only": 193.1463940519092
+  }
+]

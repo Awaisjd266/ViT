@@ -1,0 +1,17 @@
+{
+  "source_title": "Enhancing Road Pavement Crack Detection Using a Vision Transformer Approach",
+  "authors": [
+    "Muhammad Awais Javeed",
+    "Zijie Zhou",
+    "Dawei Li"
+  ],
+  "source_sha256": "99eccf2a6e8a70f92da8540d8d4d088d6a30d67baea64b2db868371b15cb4fee",
+  "origin": "user-supplied manuscript; not independently reproduced",
+  "figures": [
+    "image4.png",
+    "image3.png",
+    "image2.png",
+    "image1.png"
+  ],
+  "tables": 4
+}

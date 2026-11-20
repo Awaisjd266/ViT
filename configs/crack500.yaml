@@ -1,0 +1,24 @@
+data:
+  manifest: datasets/manifests/crack500.csv
+  root: datasets/raw/crack500
+  height: 360
+  width: 640
+  augment: true
+model:
+  name: vit
+  patch_size: 16
+  embed_dim: 192
+  depth: 6
+  heads: 6
+  decoder_channels: 128
+train:
+  epochs: 100
+  batch_size: 4
+  learning_rate: 0.0003
+  weight_decay: 0.01
+  seed: 42
+  device: cpu
+  threads: 4
+threshold: 0.5
+output: runs/crack500-vit
+purpose: research

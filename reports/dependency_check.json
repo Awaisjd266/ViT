@@ -1,0 +1,41 @@
+{
+  "packages": {
+    "torch": {
+      "imported": "2.6.0+cpu",
+      "metadata": "2.6.0+cpu",
+      "expected": "2.6.0",
+      "passed": true
+    },
+    "torchvision": {
+      "imported": "0.21.0+cpu",
+      "metadata": "0.21.0+cpu",
+      "expected": "0.21.0",
+      "passed": true
+    },
+    "numpy": {
+      "imported": "2.2.6",
+      "metadata": "2.2.6",
+      "expected": "2.2.6",
+      "passed": true
+    },
+    "Pillow": {
+      "imported": "11.2.1",
+      "metadata": "11.2.1",
+      "expected": "11.2.1",
+      "passed": true
+    },
+    "matplotlib": {
+      "imported": "3.10.3",
+      "metadata": "3.10.3",
+      "expected": "3.10.3",
+      "passed": true
+    },
+    "PyYAML": {
+      "imported": "6.0.2",
+      "metadata": "6.0.2",
+      "expected": "6.0.2",
+      "passed": true
+    }
+  },
+  "passed": true
+}

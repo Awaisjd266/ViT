@@ -1,0 +1,34 @@
+data:
+  manifest: datasets/manifests/deepcrack.csv
+  root: datasets/raw/deepcrack
+  height: 384
+  width: 544
+  augment: true
+  workers: 0
+model:
+  name: vit
+  patch_size: 16
+  embed_dim: 192
+  depth: 6
+  heads: 6
+  mlp_ratio: 4.0
+  dropout: 0.1
+  decoder_channels: 128
+  local_skip: false
+train:
+  epochs: 100
+  batch_size: 4
+  learning_rate: 0.0003
+  weight_decay: 0.01
+  bce_weight: 0.5
+  dice_weight: 0.5
+  pos_weight: 1.0
+  clip_grad: 1.0
+  patience: 20
+  amp: false
+  seed: 42
+  device: cpu
+  threads: 4
+threshold: 0.5
+output: runs/deepcrack-vit
+purpose: research

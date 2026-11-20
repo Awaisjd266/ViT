@@ -1,0 +1,23 @@
+{
+  "relative_links_checked": 18,
+  "configurations_validated": 4,
+  "cli_commands": [
+    "audit",
+    "benchmark",
+    "compare",
+    "doctor",
+    "download",
+    "evaluate",
+    "extract",
+    "extract-crack500",
+    "infer",
+    "prepare",
+    "report",
+    "suite",
+    "threshold",
+    "train",
+    "tune"
+  ],
+  "failures": [],
+  "passed": true
+}

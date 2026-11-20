@@ -1,0 +1,12 @@
+{
+  "metric": "micro_f1_a_minus_b",
+  "unit": "image",
+  "seed": 42,
+  "images": 237,
+  "iterations": 1000,
+  "ci95": [
+    -0.21008663210841577,
+    -0.16226178009212455
+  ],
+  "limitation": "Image bootstrap does not establish independent source scenes or account for training-seed variation."
+}

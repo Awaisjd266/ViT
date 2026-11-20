@@ -1,0 +1,17 @@
+{
+  "deepcrack": {
+    "url": "https://raw.githubusercontent.com/yhlleo/DeepCrack/master/dataset/DeepCrack.zip",
+    "archive_sha256": "ec3fc2bee3b71c2cc3c74739cbc51c97b77f78193d08ce3dda0e16d7d41bf585",
+    "archive_bytes": 67708808,
+    "terms": "Noncommercial research and education; original rights retained",
+    "raw_redistribution_authorized": false
+  },
+  "crack500": {
+    "source": "https://github.com/fyangneil/pavement-crack-detection",
+    "google_drive_id": "13_vDYl54Mrd34dddX9w4ppAEiuWv4MlD",
+    "archive_sha256": "2a75847f15a4384ca37fe1b0b0cb70fb50189354638b6590d2331e5284f6b075",
+    "archive_bytes": 1980983618,
+    "original_training_archive_present": false,
+    "raw_redistribution_authorized": false
+  }
+}

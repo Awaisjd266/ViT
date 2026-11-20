@@ -1,0 +1,7 @@
+origin,Metric,Crack500 strongest baseline,Δ (points),DeepCrack strongest baseline,Δ (points)
+unverified_manuscript_claim,Precision,FCN (88.89),−1.87,U-Net (91.86),+0.94
+unverified_manuscript_claim,Recall,U-Net (93.72),+0.42,ResNet (91.25),−0.66
+unverified_manuscript_claim,F1-score,U-Net (85.90),+4.54,ResNet (91.38),+0.30
+unverified_manuscript_claim,Accuracy,FCN (88.70),+1.35,ResNet (91.39),+0.39
+unverified_manuscript_claim,mIoU,FCN (79.69),+2.19,ResNet (84.15),+0.66
+unverified_manuscript_claim,FPS,U-Net (21.96),+0.89,U-Net (21.68),+0.27

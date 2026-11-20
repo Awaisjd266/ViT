@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "Cite the source manuscript and the upstream datasets when using this implementation."
+title: "Pavement ViT Research"
+type: software
+version: 0.1.0
+date-released: 2026-11-20
+authors:
+  - family-names: Javeed
+    given-names: Muhammad Awais
+repository-code: "https://github.com/Awaisjd266/ViT"
+license: MIT
+abstract: "Independent, auditable research implementation of ViT pavement crack segmentation. Original dataset and manuscript rights are excluded from the software license."

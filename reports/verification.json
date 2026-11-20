@@ -1,0 +1,228 @@
+{
+  "date": "2026-11-20",
+  "status": "local implementation verified; full benchmark and remote deployment incomplete",
+  "manuscript_sha256": "99eccf2a6e8a70f92da8540d8d4d088d6a30d67baea64b2db868371b15cb4fee",
+  "environment": {
+    "python": "3.12.0 (tags/v3.12.0:0fb18b0, Oct  2 2023, 13:03:39) [MSC v.1935 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "torch": "2.6.0+cpu",
+    "numpy": "2.2.6",
+    "pillow": "11.2.1",
+    "torch_threads": 6,
+    "cuda_available": false,
+    "cuda_version": null,
+    "git_commit": null,
+    "gpu": null
+  },
+  "tests": {
+    "tests": 34,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "data_audits": {
+    "deepcrack": {
+      "counts": {
+        "test": 237,
+        "train": 240,
+        "val": 60
+      },
+      "passed": true,
+      "decoded_duplicate_groups": 0,
+      "warnings": [
+        {
+          "inferred_scene_groups_cross_splits": {
+            "deepcrack/11142": [
+              "test",
+              "train"
+            ],
+            "deepcrack/11289": [
+              "test",
+              "train"
+            ],
+            "deepcrack/IMG_6536": [
+              "test",
+              "val"
+            ]
+          },
+          "action": "Official split retained. Independence is not established by image hashes."
+        }
+      ],
+      "manifest_sha256": "6c69cf6b4cf7d66fcb3a303e602d452bf6908362182eccf6cd734f76270a2f1c"
+    },
+    "crack500-patches": {
+      "counts": {
+        "train": 1896,
+        "val": 348,
+        "test": 1124
+      },
+      "passed": true,
+      "decoded_duplicate_groups": 0,
+      "warnings": [
+        {
+          "inferred_scene_groups_cross_splits": {
+            "crack500/20160328_154452": [
+              "test",
+              "train"
+            ],
+            "crack500/20160328_154454": [
+              "test",
+              "train"
+            ],
+            "crack500/20160329_103609": [
+              "test",
+              "train"
+            ],
+            "crack500/20160329_103800": [
+              "test",
+              "train"
+            ],
+            "crack500/20160329_111111": [
+              "test",
+              "train"
+            ],
+            "crack500/20160329_103807": [
+              "test",
+              "val"
+            ]
+          },
+          "action": "Official split retained. Independence is not established by image hashes."
+        }
+      ],
+      "manifest_sha256": "6995dba30279a3d7321b66ea603f2c4b2a957959c47ad7100f64060f8987663b"
+    }
+  },
+  "executed_smoke_results": [
+    {
+      "dataset": "crack500-patches",
+      "model": "vit",
+      "seed": 42,
+      "origin": "executed_smoke_not_benchmark_reproduction",
+      "train_images": 24,
+      "val_images": 12,
+      "test_images": 1124,
+      "epochs": 3,
+      "f1": 0.446430707440852,
+      "miou": 0.5925682914682381,
+      "accuracy": 0.9018251321776765,
+      "parameters": 96225,
+      "fps_cpu_model_only": 183.11362789362184
+    },
+    {
+      "dataset": "deepcrack",
+      "model": "vit",
+      "seed": 42,
+      "origin": "executed_smoke_not_benchmark_reproduction",
+      "train_images": 24,
+      "val_images": 12,
+      "test_images": 237,
+      "epochs": 3,
+      "f1": 0.3402570090787524,
+      "miou": 0.5411591823735039,
+      "accuracy": 0.881075015383263,
+      "parameters": 96225,
+      "fps_cpu_model_only": 140.57935569895903
+    },
+    {
+      "dataset": "deepcrack",
+      "model": "cnn",
+      "seed": 42,
+      "origin": "executed_smoke_not_benchmark_reproduction",
+      "train_images": 24,
+      "val_images": 12,
+      "test_images": 237,
+      "epochs": 3,
+      "f1": 0.5263129153628981,
+      "miou": 0.647765126534983,
+      "accuracy": 0.940429000747187,
+      "parameters": 18329,
+      "fps_cpu_model_only": 297.65005233795017
+    },
+    {
+      "dataset": "deepcrack",
+      "model": "resnet",
+      "seed": 42,
+      "origin": "executed_smoke_not_benchmark_reproduction",
+      "train_images": 24,
+      "val_images": 12,
+      "test_images": 237,
+      "epochs": 3,
+      "f1": 0.021045727819274912,
+      "miou": 0.48224186626435944,
+      "accuracy": 0.9538718436840717,
+      "parameters": 11914433,
+      "fps_cpu_model_only": 71.59328712391803
+    },
+    {
+      "dataset": "deepcrack",
+      "model": "fcn",
+      "seed": 42,
+      "origin": "executed_smoke_not_benchmark_reproduction",
+      "train_images": 24,
+      "val_images": 12,
+      "test_images": 237,
+      "epochs": 3,
+      "f1": 0.07719794799221652,
+      "miou": 0.49764159956862625,
+      "accuracy": 0.9552185659502461,
+      "parameters": 32946753,
+      "fps_cpu_model_only": 12.403382297748635
+    },
+    {
+      "dataset": "deepcrack",
+      "model": "unet",
+      "seed": 42,
+      "origin": "executed_smoke_not_benchmark_reproduction",
+      "train_images": 24,
+      "val_images": 12,
+      "test_images": 237,
+      "epochs": 3,
+      "f1": 0.4656071143367379,
+      "miou": 0.6014765662907183,
+      "accuracy": 0.9037210327663502,
+      "parameters": 122465,
+      "fps_cpu_model_only": 159.4278451500627
+    },
+    {
+      "dataset": "deepcrack",
+      "model": "vit",
+      "seed": 43,
+      "origin": "executed_smoke_not_benchmark_reproduction",
+      "train_images": 24,
+      "val_images": 12,
+      "test_images": 237,
+      "epochs": 3,
+      "f1": 0.003761388869133695,
+      "miou": 0.4792951031371767,
+      "accuracy": 0.9567095063071378,
+      "parameters": 96225,
+      "fps_cpu_model_only": 188.23848361829414
+    },
+    {
+      "dataset": "deepcrack",
+      "model": "vit",
+      "seed": 44,
+      "origin": "executed_smoke_not_benchmark_reproduction",
+      "train_images": 24,
+      "val_images": 12,
+      "test_images": 237,
+      "epochs": 3,
+      "f1": 0.353088618187659,
+      "miou": 0.5494213055451135,
+      "accuracy": 0.8879806582937764,
+      "parameters": 96225,
+      "fps_cpu_model_only": 193.1463940519092
+    }
+  ],
+  "ablation_experiments_executed": 4,
+  "tuning_trials_executed": 2,
+  "full_manuscript_reproduction_completed": false,
+  "raw_dataset_publication_completed": false,
+  "outstanding": [
+    "GitHub account with repository write access is required for deployment",
+    "Crack500 original training images missing from inspected official archive",
+    "Full-resolution, full-training-set, multi-seed benchmark experiments remain unexecuted",
+    "Raw dataset redistribution rights require confirmation",
+    "Inferred scene overlaps in official splits need further scientific assessment"
+  ]
+}

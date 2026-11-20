@@ -1,0 +1,102 @@
+[
+  {
+    "source": "manuscript_table_2.csv",
+    "model": "CNN",
+    "reported_f1": 0.7254999999999999,
+    "f1_from_PR": 0.7254667433053827,
+    "reported_miou": 0.511,
+    "miou_implied_if_all_metrics_are_micro": 0.5103850984691575,
+    "foreground_fraction_implied_if_micro": 0.4996608451780528,
+    "caution": "Conditional on global confusion aggregation; macro averaging can break these identities. Raw predictions are unavailable."
+  },
+  {
+    "source": "manuscript_table_2.csv",
+    "model": "ResNet",
+    "reported_f1": 0.8556,
+    "f1_from_PR": 0.855584646818447,
+    "reported_miou": 0.7399,
+    "miou_implied_if_all_metrics_are_micro": 0.739964461431881,
+    "foreground_fraction_implied_if_micro": 0.5000133396123834,
+    "caution": "Conditional on global confusion aggregation; macro averaging can break these identities. Raw predictions are unavailable."
+  },
+  {
+    "source": "manuscript_table_2.csv",
+    "model": "FCN",
+    "reported_f1": 0.8420000000000001,
+    "f1_from_PR": 0.8421102492746759,
+    "reported_miou": 0.7968999999999999,
+    "miou_implied_if_all_metrics_are_micro": 0.7827704540345783,
+    "foreground_fraction_implied_if_micro": 0.37668079201980054,
+    "caution": "Conditional on global confusion aggregation; macro averaging can break these identities. Raw predictions are unavailable."
+  },
+  {
+    "source": "manuscript_table_2.csv",
+    "model": "U-Net",
+    "reported_f1": 0.8590000000000001,
+    "f1_from_PR": 0.8590322871510317,
+    "reported_miou": 0.7314,
+    "miou_implied_if_all_metrics_are_micro": 0.7317328277723526,
+    "foreground_fraction_implied_if_micro": 0.500015990930928,
+    "caution": "Conditional on global confusion aggregation; macro averaging can break these identities. Raw predictions are unavailable."
+  },
+  {
+    "source": "manuscript_table_2.csv",
+    "model": "Vision Transformer",
+    "reported_f1": 0.9044,
+    "f1_from_PR": 0.904400839037315,
+    "reported_miou": 0.8188,
+    "miou_implied_if_all_metrics_are_micro": 0.8187590234832087,
+    "foreground_fraction_implied_if_micro": 0.4999490725193467,
+    "caution": "Conditional on global confusion aggregation; macro averaging can break these identities. Raw predictions are unavailable."
+  },
+  {
+    "source": "manuscript_table_3.csv",
+    "model": "CNN",
+    "reported_f1": 0.8787999999999999,
+    "f1_from_PR": 0.8788083518234057,
+    "reported_miou": 0.7851,
+    "miou_implied_if_all_metrics_are_micro": 0.7850694524465442,
+    "foreground_fraction_implied_if_micro": 0.5001534138621537,
+    "caution": "Conditional on global confusion aggregation; macro averaging can break these identities. Raw predictions are unavailable."
+  },
+  {
+    "source": "manuscript_table_3.csv",
+    "model": "ResNet",
+    "reported_f1": 0.9138,
+    "f1_from_PR": 0.9137981505799957,
+    "reported_miou": 0.8415,
+    "miou_implied_if_all_metrics_are_micro": 0.8414508758054424,
+    "foreground_fraction_implied_if_micro": 0.5001197137280414,
+    "caution": "Conditional on global confusion aggregation; macro averaging can break these identities. Raw predictions are unavailable."
+  },
+  {
+    "source": "manuscript_table_3.csv",
+    "model": "FCN",
+    "reported_f1": 0.8425,
+    "f1_from_PR": 0.8424918421833284,
+    "reported_miou": 0.7319,
+    "miou_implied_if_all_metrics_are_micro": 0.7318421825201799,
+    "foreground_fraction_implied_if_micro": 0.5000037667620916,
+    "caution": "Conditional on global confusion aggregation; macro averaging can break these identities. Raw predictions are unavailable."
+  },
+  {
+    "source": "manuscript_table_3.csv",
+    "model": "U-Net",
+    "reported_f1": 0.9056000000000001,
+    "f1_from_PR": 0.9056191212188122,
+    "reported_miou": 0.8297,
+    "miou_implied_if_all_metrics_are_micro": 0.8297956683734891,
+    "foreground_fraction_implied_if_micro": 0.4996467431354703,
+    "caution": "Conditional on global confusion aggregation; macro averaging can break these identities. Raw predictions are unavailable."
+  },
+  {
+    "source": "manuscript_table_3.csv",
+    "model": "Vision Transformer",
+    "reported_f1": 0.9168000000000001,
+    "f1_from_PR": 0.9168168384317574,
+    "reported_miou": 0.8481000000000001,
+    "miou_implied_if_all_metrics_are_micro": 0.8480691075567782,
+    "foreground_fraction_implied_if_micro": 0.5000445756658813,
+    "caution": "Conditional on global confusion aggregation; macro averaging can break these identities. Raw predictions are unavailable."
+  }
+]

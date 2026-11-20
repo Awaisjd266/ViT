@@ -1,0 +1,3 @@
+dataset,model,seed,origin,train_images,val_images,test_images,epochs,f1,miou,accuracy,parameters,fps_cpu_model_only
+deepcrack,vit,43,executed_smoke_not_benchmark_reproduction,24,12,237,3,0.003761388869133695,0.4792951031371767,0.9567095063071378,96225,188.23848361829414
+deepcrack,vit,44,executed_smoke_not_benchmark_reproduction,24,12,237,3,0.353088618187659,0.5494213055451135,0.8879806582937764,96225,193.1463940519092

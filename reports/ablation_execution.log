@@ -1,0 +1,142 @@
+2026-11-20 08:04:03,603 INFO epoch=1 train_loss=0.76518 val_loss=0.70149 val_f1=0.22051462812830455
+2026-11-20 08:04:04,696 INFO epoch=2 train_loss=0.65504 val_loss=0.65398 val_f1=0.24503647320012686
+2026-11-20 08:04:05,616 INFO epoch=3 train_loss=0.60366 val_loss=0.62501 val_f1=0.3023496746923045
+2026-11-20 08:04:23,705 INFO epoch=1 train_loss=0.63627 val_loss=0.48480 val_f1=0.19222559263004158
+2026-11-20 08:04:24,638 INFO epoch=2 train_loss=0.42719 val_loss=0.36525 val_f1=0.14232779097387174
+2026-11-20 08:04:25,501 INFO epoch=3 train_loss=0.34921 val_loss=0.33296 val_f1=0.06314148369494609
+2026-11-20 08:04:44,975 INFO epoch=1 train_loss=0.85951 val_loss=0.88149 val_f1=0.19919344983502382
+2026-11-20 08:04:45,948 INFO epoch=2 train_loss=0.82650 val_loss=0.85884 val_f1=0.22839133641789044
+2026-11-20 08:04:46,794 INFO epoch=3 train_loss=0.80154 val_loss=0.84809 val_f1=0.2507002801120448
+2026-11-20 08:05:06,821 INFO epoch=1 train_loss=0.73085 val_loss=0.65821 val_f1=0.4024880463758304
+2026-11-20 08:05:08,237 INFO epoch=2 train_loss=0.58906 val_loss=0.58942 val_f1=0.40213015766521304
+2026-11-20 08:05:09,644 INFO epoch=3 train_loss=0.52723 val_loss=0.56142 val_f1=0.45802117067040454
+[
+  {
+    "model": "vit",
+    "seed": 42,
+    "variant": "bce_dice",
+    "training": {
+      "run_id": "2a5720e4a97649a8b9ffd72e42b7caae",
+      "status": "completed",
+      "purpose": "smoke",
+      "epochs_executed": 3,
+      "best_validation_f1": 0.3023496746923045,
+      "training_samples": 24,
+      "validation_samples": 12,
+      "parameters": 96225,
+      "checkpoint_sha256": "b48188c31a29340aa5587ccd247a1f7478b2a028be5ed093c4c9cba0474701e1",
+      "benchmark_reproduction": false
+    },
+    "evaluation": {
+      "tp": 89311,
+      "fp": 309754,
+      "fn": 36586,
+      "tn": 2476605,
+      "precision": 0.22380063398193276,
+      "recall": 0.70939736451226,
+      "f1": 0.3402570090787524,
+      "crack_iou": 0.20500584183210874,
+      "background_iou": 0.8773125229148991,
+      "miou": 0.5411591823735039,
+      "accuracy": 0.881075015383263,
+      "foreground_fraction": 0.04323005944532349,
+      "pixels": 2912256
+    }
+  },
+  {
+    "model": "vit",
+    "seed": 42,
+    "variant": "bce",
+    "training": {
+      "run_id": "e61a074298254f689df95cde5e16e69b",
+      "status": "completed",
+      "purpose": "smoke",
+      "epochs_executed": 3,
+      "best_validation_f1": 0.19222559263004158,
+      "training_samples": 24,
+      "validation_samples": 12,
+      "parameters": 96225,
+      "checkpoint_sha256": "3c0d1749e88abf5d34ecc2bf571b1999255f3f8042aa49d10b491290d882de11",
+      "benchmark_reproduction": false
+    },
+    "evaluation": {
+      "tp": 51758,
+      "fp": 271038,
+      "fn": 74139,
+      "tn": 2515321,
+      "precision": 0.16034275517664406,
+      "recall": 0.41111384703368625,
+      "f1": 0.23070562723287416,
+      "crack_iou": 0.13039414513711312,
+      "background_iou": 0.8793297530709687,
+      "miou": 0.5048619491040409,
+      "accuracy": 0.8814743621439873,
+      "foreground_fraction": 0.04323005944532349,
+      "pixels": 2912256
+    }
+  },
+  {
+    "model": "vit",
+    "seed": 42,
+    "variant": "dice",
+    "training": {
+      "run_id": "ca6daa2e6adb4ec5806b27f2335a380d",
+      "status": "completed",
+      "purpose": "smoke",
+      "epochs_executed": 3,
+      "best_validation_f1": 0.2507002801120448,
+      "training_samples": 24,
+      "validation_samples": 12,
+      "parameters": 96225,
+      "checkpoint_sha256": "8bd4c7c125706ce9e14fa65f7113be10899765d3bc7de9e7985adba85a3c38cd",
+      "benchmark_reproduction": false
+    },
+    "evaluation": {
+      "tp": 117155,
+      "fp": 622011,
+      "fn": 8742,
+      "tn": 2164348,
+      "precision": 0.1584961970653412,
+      "recall": 0.9305622850425348,
+      "f1": 0.2708588854222178,
+      "crack_iou": 0.15664359787567456,
+      "background_iou": 0.7743362404435474,
+      "miou": 0.465489919159611,
+      "accuracy": 0.7834143014899789,
+      "foreground_fraction": 0.04323005944532349,
+      "pixels": 2912256
+    }
+  },
+  {
+    "model": "vit",
+    "seed": 42,
+    "variant": "local_skip",
+    "training": {
+      "run_id": "1736d10039d348139e7613f4529b73c1",
+      "status": "completed",
+      "purpose": "smoke",
+      "epochs_executed": 3,
+      "best_validation_f1": 0.45802117067040454,
+      "training_samples": 24,
+      "validation_samples": 12,
+      "parameters": 99025,
+      "checkpoint_sha256": "679c744e5d9be1d2bc4a42eb99f86950fa2f269da1cf198c547a98deb5a8e1d1",
+      "benchmark_reproduction": false
+    },
+    "evaluation": {
+      "tp": 103928,
+      "fp": 187397,
+      "fn": 21969,
+      "tn": 2598962,
+      "precision": 0.3567424697502789,
+      "recall": 0.8255002104895272,
+      "f1": 0.4981904118191275,
+      "crack_iou": 0.33172674867696156,
+      "background_iou": 0.9254481670232252,
+      "miou": 0.6285874578500934,
+      "accuracy": 0.9281086552830521,
+      "foreground_fraction": 0.04323005944532349,
+      "pixels": 2912256
+    }
+  }
+]

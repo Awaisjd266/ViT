@@ -1,0 +1,42 @@
+{
+  "data": {
+    "manifest": "datasets/manifests/crack500-patches.csv",
+    "root": "datasets/raw/crack500",
+    "height": 96,
+    "width": 128,
+    "augment": true,
+    "workers": 0,
+    "max_train": 24,
+    "max_val": 12
+  },
+  "model": {
+    "name": "vit",
+    "patch_size": 8,
+    "embed_dim": 48,
+    "depth": 2,
+    "heads": 3,
+    "mlp_ratio": 4.0,
+    "dropout": 0.0,
+    "decoder_channels": 32,
+    "local_skip": false,
+    "base_channels": 8
+  },
+  "train": {
+    "epochs": 3,
+    "batch_size": 4,
+    "learning_rate": 0.001,
+    "weight_decay": 0.01,
+    "bce_weight": 0.5,
+    "dice_weight": 0.5,
+    "pos_weight": 1.0,
+    "clip_grad": 1.0,
+    "patience": 3,
+    "amp": false,
+    "seed": 42,
+    "device": "cpu",
+    "threads": 4
+  },
+  "threshold": 0.5,
+  "output": "runs\\pinned-verification\\crack500-patches\\vit-seed42",
+  "purpose": "smoke"
+}

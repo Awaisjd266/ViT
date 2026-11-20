@@ -1,0 +1,8 @@
+* text=auto eol=lf
+*.png binary
+*.pdf binary
+# Preserve exact published artifact bytes used in recorded SHA256 identities.
+datasets/manifests/*.csv -text
+reports/*.json -text
+reports/**/*.json -text
+*.csv -text

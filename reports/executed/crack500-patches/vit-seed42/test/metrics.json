@@ -1,0 +1,114 @@
+{
+  "metrics": {
+    "tp": 546764,
+    "fp": 1130492,
+    "fn": 225471,
+    "tn": 11908985,
+    "precision": 0.3259872076773015,
+    "recall": 0.7080279966590481,
+    "f1": 0.446430707440852,
+    "crack_iou": 0.28735809183345795,
+    "background_iou": 0.8977784911030182,
+    "miou": 0.5925682914682381,
+    "accuracy": 0.9018251321776765,
+    "foreground_fraction": 0.05591160603406732,
+    "pixels": 13811712
+  },
+  "brier_score": 0.09693548159313654,
+  "image_bootstrap": {
+    "unit": "sample_id",
+    "units": 1124,
+    "iterations": 200,
+    "seed": 42,
+    "intervals": {
+      "f1": [
+        0.43467607803373287,
+        0.4579104327041254
+      ],
+      "miou": [
+        0.5877049787687637,
+        0.5978972169391814
+      ],
+      "accuracy": [
+        0.9004235209943562,
+        0.9033412295304158
+      ]
+    }
+  },
+  "scene_hint_bootstrap": {
+    "unit": "group",
+    "units": 148,
+    "iterations": 200,
+    "seed": 42,
+    "intervals": {
+      "f1": [
+        0.4214213013651934,
+        0.4665758276907418
+      ],
+      "miou": [
+        0.5821333675730599,
+        0.6019005907005398
+      ],
+      "accuracy": [
+        0.8997881962055535,
+        0.9041174370270976
+      ]
+    }
+  },
+  "threshold": 0.5,
+  "split": "test",
+  "images": 1124,
+  "checkpoint_sha256": "5153001c882c7dd38f65fbe87b1521da89ff1888ff9c0424f1d8d83c5e7a7854",
+  "manifest_sha256": "6995dba30279a3d7321b66ea603f2c4b2a957959c47ad7100f64060f8987663b",
+  "purpose": "smoke",
+  "cross_domain": false,
+  "resolution": [
+    96,
+    128
+  ],
+  "environment": {
+    "python": "3.12.0 (tags/v3.12.0:0fb18b0, Oct  2 2023, 13:03:39) [MSC v.1935 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "torch": "2.6.0+cpu",
+    "numpy": "2.2.6",
+    "pillow": "11.2.1",
+    "torch_threads": 4,
+    "cuda_available": false,
+    "cuda_version": null,
+    "git_commit": null,
+    "gpu": null
+  },
+  "benchmark_reproduction": false,
+  "aggregation": "dataset-global pixel confusion; absent-class ratios are null; mIoU averages defined classes",
+  "limitations": [
+    {
+      "inferred_scene_groups_cross_splits": {
+        "crack500/20160328_154452": [
+          "test",
+          "train"
+        ],
+        "crack500/20160328_154454": [
+          "test",
+          "train"
+        ],
+        "crack500/20160329_103609": [
+          "test",
+          "train"
+        ],
+        "crack500/20160329_103800": [
+          "test",
+          "train"
+        ],
+        "crack500/20160329_111111": [
+          "test",
+          "train"
+        ],
+        "crack500/20160329_103807": [
+          "test",
+          "val"
+        ]
+      },
+      "action": "Official split retained. Independence is not established by image hashes."
+    }
+  ]
+}

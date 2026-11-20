@@ -1,0 +1,183 @@
+2026-11-20 08:05:40,372 INFO epoch=1 train_loss=0.81717 val_loss=0.78797 val_f1=0.1511888977282772
+2026-11-20 08:05:41,518 INFO epoch=2 train_loss=0.73748 val_loss=0.73645 val_f1=0.1944796027650667
+2026-11-20 08:05:42,664 INFO epoch=3 train_loss=0.70631 val_loss=0.72486 val_f1=0.20529698351819217
+2026-11-20 08:05:52,915 INFO epoch=1 train_loss=0.76518 val_loss=0.70149 val_f1=0.22051462812830455
+2026-11-20 08:05:54,132 INFO epoch=2 train_loss=0.65504 val_loss=0.65398 val_f1=0.24503647320012686
+2026-11-20 08:05:55,533 INFO epoch=3 train_loss=0.60366 val_loss=0.62501 val_f1=0.3023496746923045
+{
+  "selection": "maximum validation F1; no test evaluation in tuning",
+  "trials": [
+    {
+      "learning_rate": 0.0003,
+      "config": {
+        "data": {
+          "manifest": "datasets/manifests/deepcrack.csv",
+          "root": "datasets/raw/deepcrack",
+          "height": 96,
+          "width": 128,
+          "augment": true,
+          "workers": 0,
+          "max_train": 24,
+          "max_val": 12
+        },
+        "model": {
+          "name": "vit",
+          "patch_size": 8,
+          "embed_dim": 48,
+          "depth": 2,
+          "heads": 3,
+          "mlp_ratio": 4.0,
+          "dropout": 0.0,
+          "decoder_channels": 32,
+          "local_skip": false,
+          "base_channels": 8
+        },
+        "train": {
+          "epochs": 3,
+          "batch_size": 4,
+          "learning_rate": 0.0003,
+          "weight_decay": 0.01,
+          "bce_weight": 0.5,
+          "dice_weight": 0.5,
+          "pos_weight": 1.0,
+          "clip_grad": 1.0,
+          "patience": 3,
+          "amp": false,
+          "seed": 42,
+          "device": "cpu",
+          "threads": 4
+        },
+        "threshold": 0.5,
+        "output": "runs\\pinned-tuning-smoke\\trial-00",
+        "purpose": "smoke"
+      },
+      "training": {
+        "run_id": "7e3145813e6541999a0ff18d650b7053",
+        "status": "completed",
+        "purpose": "smoke",
+        "epochs_executed": 3,
+        "best_validation_f1": 0.20529698351819217,
+        "training_samples": 24,
+        "validation_samples": 12,
+        "parameters": 96225,
+        "checkpoint_sha256": "0b0c71821b0a38c008c0595afc7c956c7bb4269ec06c3c3de27723c5e86f05cd",
+        "benchmark_reproduction": false
+      }
+    },
+    {
+      "learning_rate": 0.001,
+      "config": {
+        "data": {
+          "manifest": "datasets/manifests/deepcrack.csv",
+          "root": "datasets/raw/deepcrack",
+          "height": 96,
+          "width": 128,
+          "augment": true,
+          "workers": 0,
+          "max_train": 24,
+          "max_val": 12
+        },
+        "model": {
+          "name": "vit",
+          "patch_size": 8,
+          "embed_dim": 48,
+          "depth": 2,
+          "heads": 3,
+          "mlp_ratio": 4.0,
+          "dropout": 0.0,
+          "decoder_channels": 32,
+          "local_skip": false,
+          "base_channels": 8
+        },
+        "train": {
+          "epochs": 3,
+          "batch_size": 4,
+          "learning_rate": 0.001,
+          "weight_decay": 0.01,
+          "bce_weight": 0.5,
+          "dice_weight": 0.5,
+          "pos_weight": 1.0,
+          "clip_grad": 1.0,
+          "patience": 3,
+          "amp": false,
+          "seed": 42,
+          "device": "cpu",
+          "threads": 4
+        },
+        "threshold": 0.5,
+        "output": "runs\\pinned-tuning-smoke\\trial-01",
+        "purpose": "smoke"
+      },
+      "training": {
+        "run_id": "0a1868c7225948f39093074b0bf2e468",
+        "status": "completed",
+        "purpose": "smoke",
+        "epochs_executed": 3,
+        "best_validation_f1": 0.3023496746923045,
+        "training_samples": 24,
+        "validation_samples": 12,
+        "parameters": 96225,
+        "checkpoint_sha256": "6a917cf624b124931d4e351b74994e940190f52147b54975800d300da9d5dd32",
+        "benchmark_reproduction": false
+      }
+    }
+  ],
+  "best": {
+    "learning_rate": 0.001,
+    "config": {
+      "data": {
+        "manifest": "datasets/manifests/deepcrack.csv",
+        "root": "datasets/raw/deepcrack",
+        "height": 96,
+        "width": 128,
+        "augment": true,
+        "workers": 0,
+        "max_train": 24,
+        "max_val": 12
+      },
+      "model": {
+        "name": "vit",
+        "patch_size": 8,
+        "embed_dim": 48,
+        "depth": 2,
+        "heads": 3,
+        "mlp_ratio": 4.0,
+        "dropout": 0.0,
+        "decoder_channels": 32,
+        "local_skip": false,
+        "base_channels": 8
+      },
+      "train": {
+        "epochs": 3,
+        "batch_size": 4,
+        "learning_rate": 0.001,
+        "weight_decay": 0.01,
+        "bce_weight": 0.5,
+        "dice_weight": 0.5,
+        "pos_weight": 1.0,
+        "clip_grad": 1.0,
+        "patience": 3,
+        "amp": false,
+        "seed": 42,
+        "device": "cpu",
+        "threads": 4
+      },
+      "threshold": 0.5,
+      "output": "runs\\pinned-tuning-smoke\\trial-01",
+      "purpose": "smoke"
+    },
+    "training": {
+      "run_id": "0a1868c7225948f39093074b0bf2e468",
+      "status": "completed",
+      "purpose": "smoke",
+      "epochs_executed": 3,
+      "best_validation_f1": 0.3023496746923045,
+      "training_samples": 24,
+      "validation_samples": 12,
+      "parameters": 96225,
+      "checkpoint_sha256": "6a917cf624b124931d4e351b74994e940190f52147b54975800d300da9d5dd32",
+      "benchmark_reproduction": false
+    }
+  },
+  "limitation": "Repeated tuning consumes validation information; freeze search before final test."
+}

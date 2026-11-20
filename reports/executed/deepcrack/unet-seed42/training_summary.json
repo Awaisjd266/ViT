@@ -1,0 +1,12 @@
+{
+  "run_id": "807fc4cd3130445087b5a6ac8717fe03",
+  "status": "completed",
+  "purpose": "smoke",
+  "epochs_executed": 3,
+  "best_validation_f1": 0.43851309226932667,
+  "training_samples": 24,
+  "validation_samples": 12,
+  "parameters": 122465,
+  "checkpoint_sha256": "564389a92c789312cad069bfa1c83ae183df312fcba3bae8bda8243fe6fe23b6",
+  "benchmark_reproduction": false
+}

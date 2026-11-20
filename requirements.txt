@@ -1,0 +1,2 @@
+# Install torch/torchvision from the CPU or CUDA index appropriate to your machine first.
+-e .[dev,download]

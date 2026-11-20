@@ -1,0 +1,17 @@
+[
+  {
+    "dataset": "crack500-patches",
+    "model": "vit",
+    "seed": 42,
+    "origin": "executed_smoke_not_benchmark_reproduction",
+    "train_images": 24,
+    "val_images": 12,
+    "test_images": 1124,
+    "epochs": 3,
+    "f1": 0.446430707440852,
+    "miou": 0.5925682914682381,
+    "accuracy": 0.9018251321776765,
+    "parameters": 96225,
+    "fps_cpu_model_only": 183.11362789362184
+  }
+]

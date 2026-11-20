@@ -1,0 +1,10 @@
+{
+  "image_sha256": "28c52a1456d157ced88471ee8218605bbcd5a69d0589126d9a2302add19b1c43",
+  "checkpoint_sha256": "5153001c882c7dd38f65fbe87b1521da89ff1888ff9c0424f1d8d83c5e7a7854",
+  "threshold": 0.5,
+  "tile": 128,
+  "overlap": 32,
+  "height": 640,
+  "width": 360,
+  "note": "Predictions are model outputs, not annotations or measured performance"
+}

@@ -1,0 +1,22 @@
+# Explicit alternative to the unavailable 250-original-image training subset.
+# Not numerically comparable to the manuscript's resized-original protocol.
+data:
+  manifest: datasets/manifests/crack500-patches.csv
+  root: datasets/raw/crack500
+  height: 360
+  width: 640
+model:
+  name: vit
+  patch_size: 16
+  embed_dim: 192
+  depth: 6
+  heads: 6
+  decoder_channels: 128
+train:
+  epochs: 100
+  batch_size: 4
+  learning_rate: 0.0003
+  seed: 42
+  device: cpu
+output: runs/crack500-patches-vit
+purpose: research

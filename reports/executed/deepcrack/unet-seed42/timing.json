@@ -1,0 +1,26 @@
+{
+  "scope": "model-only batch1 constant-tensor workload; excludes I/O and preprocessing",
+  "parameters": 122465,
+  "median_latency_ms": 6.251149985473603,
+  "p95_latency_ms": 6.639345042640343,
+  "fps_mean": 159.4278451500627,
+  "warmup": 2,
+  "iterations": 10,
+  "resolution": [
+    96,
+    128
+  ],
+  "environment": {
+    "python": "3.12.0 (tags/v3.12.0:0fb18b0, Oct  2 2023, 13:03:39) [MSC v.1935 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "torch": "2.6.0+cpu",
+    "numpy": "2.2.6",
+    "pillow": "11.2.1",
+    "torch_threads": 4,
+    "cuda_available": false,
+    "cuda_version": null,
+    "git_commit": null,
+    "gpu": null
+  },
+  "checkpoint_sha256": "564389a92c789312cad069bfa1c83ae183df312fcba3bae8bda8243fe6fe23b6"
+}

@@ -1,0 +1,6 @@
+origin,Model,Precision,Recall,F1-score,Accuracy,mIoU,FPS
+unverified_manuscript_claim,CNN,63.79%,84.09%,72.55%,68.2%,51.10%,18.14
+unverified_manuscript_claim,ResNet,82.85%,88.45%,85.56%,85.07%,73.99%,20.89
+unverified_manuscript_claim,FCN,88.89%,80.00%,84.20%,88.70%,79.69%,21.30
+unverified_manuscript_claim,U-Net,79.29%,93.72%,85.90%,84.62%,73.14%,21.96
+unverified_manuscript_claim,Vision Transformer,87.02%,94.14%,90.44%,90.05%,81.88%,22.85
