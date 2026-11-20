@@ -5,4 +5,5 @@
 datasets/manifests/*.csv -text
 reports/*.json -text
 reports/**/*.json -text
-*.csv -text
+*.csv -text whitespace=cr-at-eol
+reports/** whitespace=cr-at-eol
